@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Dulcet software</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="@Url.Content("~/Content/Nav/")css/bootstrap.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Nav/")css/normalize.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Nav/")css/font-awesome.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Nav/")css/animate.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Nav/")css/templatemo_misc.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Nav/")css/templatemo_style.css">
+
+    <script src="@Url.Content("~/Content/Nav/")js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+            <div class="bg-overlay"></div>
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="sidebar-menu">
+
+                            <div class="logo-wrapper">
+                                <h1 class="logo">
+                                    <a href="Home">
+                                        <img src="@Url.Content("~/Content/Main/")images/Logo.png">
+                                    </a>
+                                </h1>
+                            </div> <!-- /.logo-wrapper -->
+
+                            <div class="menu-wrapper">
+                                <ul class="menu">
+                                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <li>@Html.ActionLink("ViewEmployee", "Index", "Employee")</li>
+                                        <li>@Html.ActionLink("ViewDepartment", "Index", "Department")</li>
+                                        if (User.IsInRole("A"))
+                                        {
+                                            <li>@Html.ActionLink("CreateEmployee", "Create", "Employee")</li>
+                                            <li>@Html.ActionLink("CreateDepartment", "Create", "Department")</li>
+                                        }
+                                        <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                                        <li><a href="#">@User.Identity.Name</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                                    }
+                                </ul> <!-- /.menu -->
+                                <a href="#" class="toggle-menu"><i class="fa fa-bars"></i></a>
+                            </div> <!-- /.menu-wrapper -->
+                            <!--Arrow Navigation-->
+                            <a id="prevslide" class="load-item"><i class="fa fa-angle-left"></i></a>
+                            <a id="nextslide" class="load-item"><i class="fa fa-angle-right"></i></a>
+
+                        </div> <!-- /.sidebar-menu -->
+                    </div> <!-- /.col-md-4 -->
+
+
+                    <div class="col-md-8 col-sm-12">
+
+                        <div id="menu-container">
+
+                            <div >
+                                <div class="row">
+                                    <ul class="tabs">
+                                        <li class="col-md-4 col-sm-4">
+                                            <a href="#tab1" class="icon-item">
+                                                <i class="fa fa-umbrella"></i>
+                                            </a> <!-- /.icon-item -->
+                                        </li>
+                                        <li class="col-md-4 col-sm-4">
+                                            <a href="#tab2" class="icon-item">
+                                                <i class="fa fa-camera"></i>
+                                            </a> <!-- /.icon-item -->
+                                        </li>
+                                        <li class="col-md-4 col-sm-4">
+                                            <a href="#tab3" class="icon-item">
+                                                <i class="fa fa-coffee"></i>
+                                            </a> <!-- /.icon-item -->
+                                        </li>
+                                    </ul> <!-- /.tabs -->
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="toggle-content text-center" id="tab1">
+                                            <h3>Our History</h3>
+                                            <p>
+                                                Circle is free responsive website template for you. Please tell your friends about <span class="blue">template</span><span class="green">mo</span> website. Feel free to download, modify and use this template for your websites. You can easily change icons by <a rel="nofollow" href="http://fontawesome.info/font-awesome-icon-world-map/">Font Awesome</a>. Example: <strong>&lt;i class=&quot;fa fa-camera&quot;&gt;&lt;/i&gt;</strong>
+                                                <br><br>
+                                                Credit goes to <a rel="nofollow" href="http://unsplash.com">Unsplash</a> for photos used in this template. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, repellat, aspernatur nihil quasi commodi laboriosam cumque est minus minima sit dicta adipisci possimus magnam. Sit, repudiandae, ut, error, voluptates aspernatur inventore quo earum reiciendis dolorum amet perspiciatis adipisci itaque voluptatum iste laboriosam sapiente hic autem blanditiis doloribus nihil.
+                                            </p>
+                                        </div>
+
+                                        <div class="toggle-content text-center" id="tab2">
+                                            <h3>What We Do</h3>
+                                            <p>
+                                                Donec quis orci nisl. Integer euismod lacus nec risus sollicitudin molestie vel semper turpis. In varius imperdiet enim quis iaculis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris ac mauris aliquam magna molestie posuere in id elit. Integer semper metus felis, fringilla congue elit commodo a. Donec eget rutrum libero.
+                                                <br><br>Nunc dui elit, vulputate vitae nunc sed, accumsan condimentum nisl. Vestibulum a dui lectus. Vivamus in justo hendrerit est cursus semper sed id nibh. Donec ut dictum lorem, eu molestie nisi. Quisque vulputate quis leo lobortis fermentum. Ut sit amet consectetur dui, vitae porttitor lectus.
+                                            </p>
+                                        </div>
+
+                                        <div class="toggle-content text-center" id="tab3">
+                                            <h3>Our Team</h3>
+                                            <p>
+                                                Aliquam erat volutpat. Vivamus tempus, nisi varius imperdiet molestie, velit mi feugiat felis, sit amet fringilla mi massa sit amet arcu. Mauris dictum nisl id felis lacinia congue. Aliquam lectus nisi, sodales in lacinia quis, lobortis vel sem. Vestibulum elit nisi, placerat eget auctor ut, dictum at libero.
+                                                <br><br>Proin enim odio, eleifend eget euismod vitae, pharetra sed lacus. Donec at sapien nunc. Mauris vehicula quis diam nec dignissim. Nulla consequat nibh mattis metus sodales, at eleifend tortor tempor. Sed auctor lacus felis.
+                                            </p>
+                                        </div>
+                                    </div> <!-- /.col-md-12 -->
+                                </div> <!-- /.row -->
+
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="member-item">
+                                            <div class="thumb">
+                                                <img src="@Url.Content("~/Content/Main/")images/team/member-1.jpg" alt="Siam-iOS Developer">
+                                            </div>
+                                            <h4>Siam Biswas</h4>
+                                            <span>iOS Developer</span>
+                                        </div> <!-- /.member-item -->
+                                    </div> <!-- /.col-md-4 -->
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="member-item">
+                                            <div class="thumb">
+                                                <img src="@Url.Content("~/Content/Main/")images/team/member-2.jpg" alt="Kamrul-ASP.NET MVC Developer">
+                                            </div>
+                                            <h4>Kamrul Hasan</h4>
+                                            <span>ASP.NET MVC Developer</span>
+                                        </div> <!-- /.member-item -->
+                                    </div> <!-- /.col-md-4 -->
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="member-item">
+                                            <div class="thumb">
+                                                <img src="@Url.Content("~/Content/Main/")images/team/member-3.jpg" alt="Fahim-HR">
+                                            </div>
+                                            <h4>Ahamed Fahim</h4>
+                                            <span>HR</span>
+                                        </div> <!-- /.member-item -->
+                                    </div> <!-- /.col-md-4 -->
+                                </div> <!-- /.row -->
+                            </div> <!-- /.about -->
+                        </div>
+                    </div>
+
+
+             </div> <!-- /.row -->
+
+            </div> <!-- /.container-fluid -->
+
+           
+                    <div class="col-md-12 footer">
+                        <p id="footer-text">
+
+                        <p>&copy; @DateTime.Now.Year -Dulcet software</p>
+                    </div><!-- /.footer -->
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="@Url.Content("~/Content/Nav/")js/vendor/jquery-1.10.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="@Url.Content("~/Content/Nav/")js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+    <script src="@Url.Content("~/Content/Nav/")js/jquery.easing-1.3.js"></script>
+    <script src="@Url.Content("~/Content/Nav/")js/bootstrap.js"></script>
+    <script src="@Url.Content("~/Content/Nav/")js/plugins.js"></script>
+    <script src="@Url.Content("~/Content/Nav/")js/main.js"></script>
+    <script type="text/javascript">
+
+    jQuery(function ($) {
+
+        $.supersized({
+
+            // Functionality
+            slide_interval: 3000, // Length between transitions
+            transition: 1, // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+            transition_speed: 700, // Speed of transition
+
+            // Components
+            slide_links: 'blank', // Individual links for each slide (Options: false, 'num', 'name', 'blank')
+            slides: [ // Slideshow Images
+                {
+                    image: '@Url.Content("~/Content/Nav/")images/slide-1.jpg'
+                }, {
+                    image: '@Url.Content("~/Content/Nav/")images/slide-2.jpg'
+                }, {
+                    image: '@Url.Content("~/Content/Nav/")images/slide-3.jpg'
+                }, {
+                    image: '@Url.Content("~/Content/Nav/")images/slide-4.jpg'
+                }
+            ]
+
+        });
+    });
+
+    </script>
+
+    <!-- Google Map -->
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="@Url.Content("~/Content/Nav/")js/vendor/jquery.gmap3.min.js"></script>
+    <!-- Google Map Init-->
+    <script type="text/javascript">
+        function templatemo_map() {
+            $('.google-map').gmap3({
+                marker: {
+                    address: '16.8496189,96.1288854'
+                },
+                map: {
+                    options: {
+                        zoom: 15,
+                        scrollwheel: false,
+                        streetViewControl: true
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

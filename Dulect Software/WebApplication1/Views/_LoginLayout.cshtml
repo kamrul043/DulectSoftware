@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="@Url.Content("~/Content/Nav/")css/bootstrap.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Nav/")css/normalize.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Nav/")css/font-awesome.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Nav/")css/animate.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Nav/")css/templatemo_misc.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Nav/")css/templatemo_style.css">
+
+</head>
+<body>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+      <!-- script references -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="@Url.Content("~/Content/Nav/")js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+    <script src="@Url.Content("~/Content/Nav/")js/jquery.easing-1.3.js"></script>
+    <script src="@Url.Content("~/Content/Nav/")js/bootstrap.js"></script>
+    <script src="@Url.Content("~/Content/Nav/")js/plugins.js"></script>
+    <script src="@Url.Content("~/Content/Nav/")js/main.js"></script>
+
+    <script type="text/javascript">
+
+    jQuery(function ($) {
+
+        $.supersized({
+
+            // Functionality
+            slide_interval: 3000, // Length between transitions
+            transition: 1, // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+            transition_speed: 700, // Speed of transition
+
+            // Components
+            slide_links: 'blank', // Individual links for each slide (Options: false, 'num', 'name', 'blank')
+            slides: [ // Slideshow Images
+                {
+                    image: '@Url.Content("~/Content/Nav/")images/templatemo-slide-1.jpg'
+                }, {
+                    image: '@Url.Content("~/Content/Nav/")images/templatemo-slide-2.jpg'
+                }, {
+                    image: '@Url.Content("~/Content/Nav/")images/templatemo-slide-3.jpg'
+                }, {
+                    image: '@Url.Content("~/Content/Nav/")images/templatemo-slide-4.jpg'
+                }
+            ]
+
+        });
+    });
+
+    </script>
+</body>
+</html>

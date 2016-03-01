@@ -1,0 +1,31 @@
+﻿@model IEnumerable<WebApplication1.Models.tbl_Dept>
+
+@{
+    ViewBag.Title = "Department";
+    Layout = "~/Views/_MainLayout.cshtml";
+}
+
+<h2>All Department</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HOD)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOD)
+        </td>
+    </tr>
+}
+
+</table>

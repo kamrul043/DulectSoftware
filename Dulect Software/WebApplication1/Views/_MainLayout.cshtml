@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Main/")style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="@Url.Content("~/Content/Main/")js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Main/")js/script.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Main/")js/cufon-yui.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Main/")js/arial.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Main/")js/cuf_run.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="main_resize">
+            <div class="header">
+                <div class="logo">
+                    <h1><a href=""><span>Dulcet software</span></a></h1>
+                </div>
+                <div class="search">
+                    <form method="get" id="search" action="#">
+                        <span>
+                            <input type="text" value="Search..." name="s" id="s" />
+                            <input name="searchsubmit" type="image" src="@Url.Content("~/Content/Main/")images/search.gif" value="Go" id="searchsubmit" class="btn" />
+                        </span>
+                    </form>
+                    <!--/searchform -->
+                    <div class="clr"></div>
+                </div>
+                <div class="clr"></div>
+                <div class="menu_nav">
+                    <ul>
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li>@Html.ActionLink("ViewEmployee", "Index", "Employee")</li>
+                            <li>@Html.ActionLink("ViewDepartment", "Index", "Department")</li>
+                            if (User.IsInRole("A"))
+                            {
+                                <li>@Html.ActionLink("CreateEmployee", "Create", "Employee")</li>
+                                <li>@Html.ActionLink("CreateDepartment", "Create", "Department")</li>
+                            }
+                            <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                            <li><a href="">@User.Identity.Name</a></li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                        }
+                    </ul>
+                   
+                </div>
+                <div class="hbg">
+                 <img src="@Url.Content("~/Content/Nav/")images/header_images.jpg" width="923" height="291" alt="" />
+                </div>
+                <div>
+                    @RenderBody()
+                </div>
+               
+                        <div class="col-md-12 footer">
+                            <p id="footer-text">
+
+                            <p>&copy; @DateTime.Now.Year - Dulcet software</p>
+                        </div><!-- /.footer -->
+                    </div>
+                </div> <!-- /.container-fluid -->
+
+
+
+            </div>
+   
+</body>
+</html>
