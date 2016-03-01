@@ -1,3 +1,3 @@
-# DulectSoftware
+# DulcetSoftware
 Its ok
-Dulect software a company work. All employee and department database create in the software.
+Dulcet software a company work. All employee and department database create in the software.
